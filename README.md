@@ -1,5 +1,7 @@
 # Product Hub Manager Online
 
+live link:https://product-hub-online.vercel.app
+
 A full-stack admin dashboard application built with Next.js and NextUI, designed to manage products, featuring authentication, CRUD operations, and various product management functionalities.
 
 ## Features
