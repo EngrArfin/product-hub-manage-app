@@ -31,16 +31,14 @@ export const POST = async (request: Request) => {
     };
 
     const resp = await userCollection.insertOne(userToInsert);
-
     const path = newUser.role === "admin" ? "/admin" : "/user";
-
     return NextResponse.json(
       { message: "User Created", data: resp, redirectTo: path },
       { status: 200 }
     );
   } catch (error) {
     return NextResponse.json(
-      { message: "Something Went Wrong", error },
+      { message: "Something  Wrong", error },
       { status: 500 }
     );
   }
