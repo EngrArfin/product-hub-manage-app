@@ -33,12 +33,12 @@ const ProducrCard = () => {
           {/* )} */}
         </div>
         <div className="flex items-center">
-          <span className="font-bold text-sm">
+          <span className=" text-sm">
             Quantity: <span className="text-red-600">Good</span>
           </span>
         </div>
         <div className="flex items-center">
-          <span className="font-bold text-sm">
+          <span className=" text-sm">
             stock: <span className="text-green-600">Available</span>
           </span>
         </div>
@@ -49,7 +49,7 @@ const ProducrCard = () => {
           href={`/products/`}
           className="bg-green-700 text-white py-2 px-8 rounded font-semibold hover:bg-green-900 transition-transform duration-300 transform hover:scale-105"
         >
-          Product
+          Buy Now
         </Link>
       </div>
     </div>
