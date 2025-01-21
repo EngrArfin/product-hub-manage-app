@@ -12,7 +12,7 @@ export const login = createAsyncThunk(
   ) => {
     try {
       const response = await axios.post(
-        "https://meeting-room-booking-system-peach.vercel.app/api/auth/login",
+        "http://localhost:5000/api/auth/login",
         { email, password },
         { headers: { "Content-Type": "application/json" } }
       );

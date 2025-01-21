@@ -1,0 +1,106 @@
+[
+  {
+    "id": 1,
+    "title": "Mechanical Keyboard",
+    "photo": {
+      "thumbnail": "https://i.ibb.co/DGYT9Yw/card1.jpg",
+      "cover": "https://i.ibb.co/6NNYnYv/card2.jpg"
+    },
+    "quantity": 50,
+    "price": 99.99,
+    "stock": 50,
+    "discount": 10,
+    "__v": 0
+  },
+  {
+    "id": 2,
+    "title": "Gaming Mouse",
+    "photo": {
+      "thumbnail": "https://i.ibb.co/jh83qJn/card3.jpg",
+      "cover": "https://i.ibb.co/sKpPxXh/card4.jpg"
+    },
+    "quantity": 100,
+    "price": 49.99,
+    "stock": 100,
+    "discount": 15,
+    "__v": 0
+  },
+  {
+    "id": 3,
+    "title": "Wireless Headset",
+    "photo": {
+      "thumbnail": "https://i.ibb.co/qF8Xb9p/card5.jpg",
+      "cover": "https://i.ibb.co/N7mZVkP/card6.jpg"
+    },
+    "quantity": 30,
+    "price": 89.99,
+    "stock": 30,
+    "discount": 5,
+    "__v": 0
+  },
+  {
+    "id": 4,
+    "title": "Monitor Stand",
+    "photo": {
+      "thumbnail": "https://i.ibb.co/zNQCskH/card7.jpg",
+      "cover": "https://i.ibb.co/CWb0TTZ/card8.jpg"
+    },
+    "quantity": 75,
+    "price": 39.99,
+    "stock": 75,
+    "discount": 20,
+    "__v": 0
+  },
+  {
+    "id": 5,
+    "title": "RGB Mousepad",
+    "photo": {
+      "thumbnail": "https://i.ibb.co/DGKbvM1/card9.jpg",
+      "cover": "https://i.ibb.co/NLY1yWz/card10.jpg"
+    },
+    "quantity": 150,
+    "price": 19.99,
+    "stock": 150,
+    "discount": 10,
+    "__v": 0
+  },
+  {
+    "id": 6,
+    "title": "Ergonomic Chair",
+    "photo": {
+      "thumbnail": "https://i.ibb.co/GnX7mLt/card11.jpg",
+      "cover": "https://i.ibb.co/Hh5GSkz/card12.jpg"
+    },
+    "quantity": 20,
+    "price": 249.99,
+    "stock": 20,
+    "discount": 25,
+    "__v": 0
+  },
+  {
+    "id": 7,
+    "title": "Desk Organizer",
+    "photo": {
+      "thumbnail": "https://i.ibb.co/WtBXHbj/card13.jpg",
+      "cover": "https://i.ibb.co/3RjYK5N/card14.jpg"
+    },
+    "quantity": 200,
+    "price": 14.99,
+    "stock": 200,
+    "discount": 5,
+    "__v": 0
+  },
+  {
+    "id": 8,
+    "title": "Ultra HD Monitor",
+    "photo": {
+      "thumbnail": "https://i.ibb.co/pzsyRsc/card15.jpg",
+      "cover": "https://i.ibb.co/FVd3QZZ/card16.jpg"
+    },
+    "quantity": 10,
+    "price": 399.99,
+    "stock": 10,
+    "discount": 30,
+    "__v": 0
+  }
+]

@@ -1,6 +1,7 @@
-# Product Hub Manager Online
+# Product Hub Client Manager Online
 
-live link:https://product-hub-online.vercel.app
+Client live link:https://product-hub-online.vercel.app
+Server Live: https://product-hub-server-psi.vercel.app
 
 A full-stack admin dashboard application built with Next.js and NextUI, designed to manage products, featuring authentication, CRUD operations, and various product management functionalities.
 
@@ -43,9 +44,9 @@ A full-stack admin dashboard application built with Next.js and NextUI, designed
   - Authentication using Next.js custom auth
 
 - **Backend**
+
   - Node.js
   - Express.js
-  - Prisma ORM with PostgreSQL
   - MVC (Model-View-Controller) architecture for API
 
 ## Installation

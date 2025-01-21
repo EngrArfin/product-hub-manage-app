@@ -17,6 +17,13 @@ export const baseApi = createApi({
   }),
   tagTypes: ["todo"],
   endpoints: (builder) => ({
+    getProducts: builder.query({
+      query: () => ({
+        url: "/products",
+        method: "GET",
+      }),
+    }),
+
     signup: builder.mutation({
       query: (userData) => ({
         url: "/auth/signup",
@@ -35,4 +42,5 @@ export const baseApi = createApi({
   }),
 });
 
-export const { useSignupMutation, useLoginMutation } = baseApi;
+export const { useSignupMutation, useLoginMutation, useGetProductsQuery } =
+  baseApi;

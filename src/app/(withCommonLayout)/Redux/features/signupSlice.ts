@@ -4,7 +4,6 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 
-// Signup async action
 export const signup = createAsyncThunk(
   "auth/signup",
   async (
@@ -16,9 +15,8 @@ export const signup = createAsyncThunk(
     { rejectWithValue }
   ) => {
     try {
-      // Use axios to send the POST request
       const response = await axios.post(
-        "https://meeting-room-booking-system-peach.vercel.app/api/auth/signup",
+        "http://localhost:5000/api/auth/signup",
         { name, email, password },
         { headers: { "Content-Type": "application/json" } }
       );
