@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import axios from "axios";
@@ -112,3 +111,138 @@ const SignUp = () => {
 };
 
 export default SignUp;
+/* 
+"use client"; 
+
+import { useState } from "react";
+import { useSignupMutation } from "../(withCommonLayout)/Redux/api/api";
+import { useAppDispatch } from "../(withCommonLayout)/Redux/hooks";
+import { signup } from "../(withCommonLayout)/Redux/features/signupSlice";
+import Link from "next/link";
+import { useRouter } from "next/router";
+
+const Signup = () => {
+  const [signupUser, { isLoading, error }] = useSignupMutation();
+  const dispatch = useAppDispatch();
+  const router = useRouter();
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const result = await signupUser(formData).unwrap();
+      dispatch(signup(result));
+      router.push("/login");
+    } catch (err) {
+      console.error("Signup failed", err);
+    }
+  };
+
+  return (
+    <div className="flex min-h-screen">
+      <div className="flex-1 flex justify-center items-center bg-gray-100 p-8">
+        <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
+          <h2 className="text-2xl font-semibold text-center mb-6">
+            Sign Up Account
+          </h2>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-4">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Name
+              </label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <div className="mb-4">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Email
+              </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <div className="mb-4">
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Password
+              </label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+                className="mt-1 p-2 w-full border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+            >
+              {isLoading ? "Signing up..." : "Sign Up"}
+            </button>
+          </form>
+
+          {error && (
+            <div className="mt-4 p-4 bg-red-100 text-red-700 rounded-md">
+              There was an error signing up!
+            </div>
+          )}
+
+          <div className="mt-4 text-center">
+            <span className="text-sm text-gray-600">
+              Already have an account?{" "}
+            </span>
+            <Link href="/login" className="text-blue-600 hover:underline">
+              Login
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Signup;
+ */

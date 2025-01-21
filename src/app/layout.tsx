@@ -6,8 +6,7 @@ import { Providers } from "./providers";
 
 import { siteConfig } from "@/src/config/site";
 import { fontSans } from "@/src/config/fonts";
-import { Provider } from "react-redux";
-import { store } from "./(withCommonLayout)/Redux/store";
+import { Navbar } from "../components/navbar";
 
 export const metadata: Metadata = {
   title: {
@@ -43,8 +42,9 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col h-screen">
+            <Navbar />
             <main className="container mx-auto max-w-7xl pt-16 px-6 flex-grow">
-              <Provider store={store}>{children}</Provider>
+              {children}
             </main>
           </div>
         </Providers>

@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+/* "use Client";
 import { User } from "@/src/types";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
@@ -61,3 +61,4 @@ const loginSlice = createSlice({
 export default loginSlice.reducer;
 
 export type { LoginState };
+ */

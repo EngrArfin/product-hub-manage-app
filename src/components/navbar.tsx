@@ -1,3 +1,4 @@
+"use client";
 import {
   Navbar as HeroUINavbar,
   NavbarContent,
@@ -17,6 +18,7 @@ import clsx from "clsx";
 import { siteConfig } from "@/src/config/site";
 import { ThemeSwitch } from "@/src/components/theme-switch";
 import { GithubIcon, SearchIcon, Logo } from "@/src/components/icons";
+import { useRouter } from "next/navigation";
 
 export const Navbar = () => {
   const searchInput = (
@@ -34,6 +36,10 @@ export const Navbar = () => {
       type="search"
     />
   );
+  const router = useRouter();
+  const handlePress = () => {
+    router.push("/login");
+  };
 
   return (
     <HeroUINavbar maxWidth="xl" position="sticky">
@@ -69,7 +75,7 @@ export const Navbar = () => {
         <ThemeSwitch />
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
         <NavbarItem className="hidden md:flex">
-          <Button>Login</Button>
+          <Button onPress={handlePress}>Login</Button>
         </NavbarItem>
       </NavbarContent>
 

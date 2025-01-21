@@ -19,7 +19,7 @@ export const connectDB = async (): Promise<Db> => {
       },
     });
     await client.connect();
-    db = client.db("Producy-Hub");
+    db = client.db("productHub");
     console.log("Database Connect successfully.");
     return db;
   } catch (error) {

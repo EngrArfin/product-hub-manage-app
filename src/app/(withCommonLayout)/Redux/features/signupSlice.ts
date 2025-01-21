@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { User } from "@/src/types";
+/* import { User } from "@/src/types";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
@@ -66,3 +65,4 @@ const signupSlice = createSlice({
 export default signupSlice.reducer;
 
 export type { SignupState };
+ */

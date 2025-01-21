@@ -1,7 +1,45 @@
 import axios from "axios";
-import { TService, TServiceDetails } from "../types";
+import { TProduct, TProductDetails, TService, TServiceDetails } from "../types";
 
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
+
+export const getProducts = async (): Promise<TProduct[]> => {
+  try {
+    const res = await axios.get<{ products: TProduct[] }>(
+      `${BASE_URL}/products/api/get`
+    );
+
+    console.log("Fetched products:", res.data);
+
+    if (res.status !== 200 || !res.data.products) {
+      throw new Error(`Failed to fetch products: ${res.statusText}`);
+    }
+
+    return res.data.products;
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    return [];
+  }
+};
+
+export const getProductsDetails = async (
+  id: string
+): Promise<TProductDetails> => {
+  try {
+    const res = await axios.get(`${BASE_URL}/services/api/${id}`);
+
+    console.log("Fetched products details:", res.data);
+
+    if (res.status !== 200) {
+      throw new Error(`Failed to fetch products details: ${res.statusText}`);
+    }
+
+    return res.data as TProductDetails;
+  } catch (error) {
+    console.error(`Error fetching products details for ID ${id}:`, error);
+    return {} as TProductDetails;
+  }
+};
 
 export const getServices = async (): Promise<TService[]> => {
   try {

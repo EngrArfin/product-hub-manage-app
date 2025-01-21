@@ -4,6 +4,35 @@ export type IconSvgProps = SVGProps<SVGSVGElement> & {
   size?: number;
 };
 
+export interface TProduct {
+  _id: string;
+  id: number;
+  title: string;
+  price: number;
+  photo: {
+    thumbnail: string;
+    cover?: string;
+  };
+  thumbnail: string;
+  cover: string;
+  quantity: number;
+  stock: number;
+  discount: number;
+  __v: number;
+}
+
+export interface TProductDetails {
+  product: SetStateAction<TProduct>;
+  _id: string;
+  title: string;
+  description: string;
+  img: string;
+  price: number;
+  stock: number;
+  discount: number;
+  reviews: string[];
+}
+
 export interface TService {
   _id: string;
   id: number;
@@ -25,15 +54,17 @@ export interface TServiceDetails {
   reviews: string[];
 }
 
-export interface User {
-  user?: any;
+export type TProductCardProps = {
   _id: string;
+  id: string;
+  productName: string;
+  productId: string;
   name: string;
-  email: string;
-  password: string;
-  phone: string;
-  address: string;
-  token?: string;
-  role: string /*  "admin" | "user" */;
-  __v: number;
-}
+  rating: number;
+  brand: string;
+  availableQuantity: number;
+  price: number;
+  image: string;
+  quantity: number;
+  description: string;
+};
