@@ -1,7 +1,19 @@
+"use client";
 import { configureStore } from "@reduxjs/toolkit";
+import { baseApi } from "./api/api";
+import loginReducer from "./features/loginSlice";
+import signupReducer from "./features/signupSlice";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    [baseApi.reducerPath]: baseApi.reducer,
+    login: loginReducer,
+    signup: signupReducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }).concat(baseApi.middleware),
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

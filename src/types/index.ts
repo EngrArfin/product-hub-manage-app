@@ -24,3 +24,16 @@ export interface TServiceDetails {
   ratings: number;
   reviews: string[];
 }
+
+export interface User {
+  user?: any;
+  _id: string;
+  name: string;
+  email: string;
+  password: string;
+  phone: string;
+  address: string;
+  token?: string;
+  role: string /*  "admin" | "user" */;
+  __v: number;
+}
