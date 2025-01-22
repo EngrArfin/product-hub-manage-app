@@ -24,7 +24,6 @@ const Header = () => {
                 <SearchIcon className="pointer-events-none flex-shrink-0 text-ellipsis" />
               }
             />
-            {/* <input type="search" name="search" id="search" /> */}
           </form>
         </div>
       </div>

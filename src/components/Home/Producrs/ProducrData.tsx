@@ -7,7 +7,7 @@ import ProductCard from "./ProducrCard";
 
 const ProductData = () => {
   const [products, setProducts] = useState<TProduct[]>([]);
-  console.log(products);
+
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string>("");
 

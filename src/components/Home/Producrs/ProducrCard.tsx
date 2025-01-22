@@ -21,7 +21,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
   return (
     <div className="card bg-white dark:bg-gray-800 w-full max-w-sm shadow-lg rounded-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-transform duration-300 transform hover:scale-105 m-2">
-      {/* Product Image */}
       <figure className="relative w-full h-40 overflow-hidden rounded-t-lg">
         <img
           src={imageUrl}
@@ -38,7 +37,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
         )}
       </figure>
 
-      {/* Product Details */}
       <div className="card-body p-4">
         <h2 className="text-lg font-semibold text-gray-900 dark:text-gray-100 truncate">
           {title}
@@ -67,7 +65,6 @@ const ProductCard = ({ product }: ProductCardProps) => {
         </div>
       </div>
 
-      {/* Action Button */}
       <div className="flex justify-center p-4">
         <Link
           href={`/products/${_id}`}

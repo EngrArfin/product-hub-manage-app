@@ -1,44 +1,49 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { NextResponse } from "next/server";
 import bcrypt from "bcrypt";
 import { connectDB } from "@/src/libs/connectDB";
 
 export const POST = async (request: Request) => {
-  const newUser = await request.json();
+  const { name, email, password, role } = await request.json();
+
+  if (!name || !email || !password) {
+    return NextResponse.json(
+      { message: "Name, email, and password are required" },
+      { status: 400 }
+    );
+  }
 
   try {
     const db = await connectDB();
+    const userCollection = db.collection("users");
 
-    if (!db) {
+    // Check if user already exists
+    const existingUser = await userCollection.findOne({ email });
+    if (existingUser) {
       return NextResponse.json(
-        { message: "Database connection failed" },
-        { status: 500 }
+        { message: "User already exists" },
+        { status: 409 }
       );
     }
 
-    const userCollection = db.collection("users");
+    // Hash the password
+    const hashedPassword = bcrypt.hashSync(password, 12);
 
-    const exist = await userCollection.findOne({ email: newUser.email });
-
-    if (exist) {
-      return NextResponse.json({ message: "User Exists" }, { status: 304 });
-    }
-    const hashedPassword = bcrypt.hashSync(newUser.password, 14);
-    const userToInsert = {
-      ...newUser,
+    // Insert new user
+    const newUser = {
+      name,
+      email,
       password: hashedPassword,
-      role: newUser.role || "admin",
+      role: role || "user",
     };
+    const result = await userCollection.insertOne(newUser);
 
-    const resp = await userCollection.insertOne(userToInsert);
-    const path = newUser.role === "admin" ? "/admin" : "/user";
     return NextResponse.json(
-      { message: "User Created", data: resp, redirectTo: path },
-      { status: 200 }
+      { message: "User created successfully", userId: result.insertedId },
+      { status: 201 }
     );
   } catch (error) {
     return NextResponse.json(
-      { message: "Something  Wrong", error },
+      { message: "Internal Server Error", error },
       { status: 500 }
     );
   }
